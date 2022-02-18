@@ -9,7 +9,7 @@ import retrofit2.http.GET;
 import retrofit2.http.Path;
 
 public interface ApiService {
-    @GET("posts")
+    @GET("users")
     
     Call<List<MovieModel>> getMovieList ();
 

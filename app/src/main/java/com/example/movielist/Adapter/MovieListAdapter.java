@@ -4,16 +4,11 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageButton;
-import android.widget.ImageView;
-import android.widget.ListView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.bumptech.glide.Glide;
-import com.bumptech.glide.request.RequestOptions;
 import com.example.movielist.R;
 import com.example.movielist.model.MovieModel;
 
@@ -44,7 +39,8 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
     @Override
     public void onBindViewHolder(@NonNull MovieListAdapter.ViewHolder holder, int position) {
 
-        holder.title.setText(this.list.get(position).getTitle().toString());
+        holder.title.setText(this.list.get(position).getLogin().toString());
+        holder.url.setText(this.list.get(position).getUrl().toString());
 
 
     }
@@ -62,11 +58,13 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         TextView title;
+        TextView url;
 
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             title = itemView.findViewById(R.id.titleView);
+            url = itemView.findViewById(R.id.titleView2);
 
         }
     }
